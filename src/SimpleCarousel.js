@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function SimpleCarousel(props) {
@@ -24,32 +27,38 @@ export default function SimpleCarousel(props) {
     if(props.images.length > 0) {
         return (
             <div>
+                {/* <FontAwesomeIcon icon={faArrowCircleLeft} />
+                <FontAwesomeIcon icon={faArrowCircleRight} /> */}
                 <div className="buttons-top">
-                    <div>
-                        <Button onClick={() => prevImage()}>Prev</Button>
+                    <div className="arrow" onClick={() => prevImage()}>
+                        <FontAwesomeIcon icon={faArrowCircleLeft} />
                     </div>
-                    <p className="counter">{index + 1} / {props.images.length}</p>
-                    <div>
-                        <Button onClick={() => nextImage()}>Next</Button>
+                    <p className="counter">
+                        {index + 1} / {props.images.length}
+                    </p>
+                    <div className="arrow" onClick={() => nextImage()}>
+                        <FontAwesomeIcon icon={faArrowCircleRight} />
                     </div>
                 </div>
-                <img 
-                    onClick={() => nextImage()} 
-                    className="simple-image" 
-                    src={props.images[index].fields.Attachments[0].url} 
-                    alt="family">
-                </img>
+                <img
+                    onClick={() => nextImage()}
+                    className="simple-image"
+                    src={props.images[index].fields.Attachments[0].url}
+                    alt="family"
+                ></img>
                 <div className="buttons-bottom">
-                    <div>
-                        <Button onClick={() => prevImage()}>Prev</Button>
+                    <div className="arrow">
+                        <FontAwesomeIcon onClick={() => prevImage()} icon={faArrowCircleLeft} />
                     </div>
-                    <p className="counter">{index + 1} / {props.images.length}</p>
-                    <div>
-                        <Button onClick={() => nextImage()}>Next</Button>
+                    <p className="counter">
+                        {index + 1} / {props.images.length}
+                    </p>
+                    <div className="arrow">
+                        <FontAwesomeIcon onClick={() => nextImage()} icon={faArrowCircleRight} />
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 
     return <div></div>
