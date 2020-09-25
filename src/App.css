@@ -1,3 +1,7 @@
+/* 
+    - When a user clicked the arrow, it would sometimes highlight the image / counter
+    - Disable highlighting on page 
+*/
 * {
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -13,12 +17,6 @@
     position: relative;
 }
 
-.controller-carousel-container {
-    max-width: 1000px;
-    margin: 0px auto;
-    position: absolute;
-}
-
 .simple-carousel-container {
     max-width: 800px;
     width: 100%;
@@ -26,17 +24,13 @@
 }
 
 .simple-image {
-    display: block;
     width: 100%;
     height: auto;
     margin: 0px auto;
     margin-bottom: 20px;
-    /* position: fixed;
-    top: 50%;
-    transform: translateY(-50%); */
 }
 
-.buttons-top {
+.buttons-desktop {
     width: 300px;
     align-items: center;
     justify-content: space-between;
@@ -44,7 +38,7 @@
     margin: 10px auto;
 }
 
-.buttons-bottom {
+.buttons-mobile {
     text-align: center;
     position: fixed;
     width: 230px;
@@ -56,7 +50,7 @@
     /* Will not center vertically and won't work in IE6/7. */
     left: 0;
     right: 0;
-    bottom: 10px;
+    bottom: 5px;
 }
 
 .arrow {
@@ -65,18 +59,20 @@
 }
 
 .counter {
-    /* line-height: 80px; */
     vertical-align: middle;
     font-size: 25px;
-    margin: 0px;
-    padding: 0px;
 }
 
 @media only screen and (max-width: 550px) {
-    .buttons-top {
+    .buttons-desktop {
         visibility: hidden;
     }
 
+    .buttons-mobile {
+        visibility: visible;
+    }
+
+    /* Center Image Vetically */
     .simple-image {
         margin-bottom: 0px;
         position: fixed;
@@ -84,7 +80,4 @@
         transform: translateY(-40%);
     }
 
-    .buttons-bottom {
-        visibility: visible;
-    }
 }

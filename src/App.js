@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import SimpleCarousel from "./SimpleCarousel"
 import axios from 'axios';
+import secret from "./secret"
 
 
 function App() {
@@ -10,13 +11,14 @@ function App() {
 
   useEffect(() => {
     axios.get(
-        "https://api.airtable.com/v0/appG5lF32eK3y8xNy/Images?maxRecords=10&view=Grid%20view", {
+        secret.url, {
           headers: {
-            authorization: `Bearer ${"keyMY6DG93rVebo5z"}`
+            authorization: `Bearer ${secret.key}`
           }
         }
     ).then(
       response => {
+        // filter out records that don't have attachments
         const images = response.data.records.filter((record) => record.fields.Attachments)
         setImages(images)
       }
