@@ -2,7 +2,6 @@
     min-height: 100vh;
     max-width: 800px;
     margin: 0px auto;
-    margin-top: 10vh;
     position: relative;
 }
 
@@ -30,19 +29,18 @@
 }
 
 .buttons-top {
-    margin: 0px auto;
     width: 300px;
     align-items: center;
     justify-content: space-between;
     display: flex;
-    margin-bottom: 20px;
+    margin: 10px auto;
 }
 
 .buttons-bottom {
     text-align: center;
     position: fixed;
     width: 230px;
-    margin: 5% auto;
+    margin: 5px auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
