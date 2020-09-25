@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import SimpleCarousel from "./SimpleCarousel"
+import axios from 'axios';
+
 
 function App() {
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    axios.get(
+        "https://api.airtable.com/v0/appG5lF32eK3y8xNy/Images?maxRecords=10&view=Grid%20view", {
+          headers: {
+            authorization: `Bearer ${"keyMY6DG93rVebo5z"}`
+          }
+        }
+    ).then(
+      response => {
+        const images = response.data.records.filter((record) => record.fields.Attachments)
+        setImages(images)
+      }
+    );
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="app">
+      <div className="simple-carousel-container">
+        <SimpleCarousel
+          images={images}
         >
-          Learn React
-        </a>
-      </header>
+        </SimpleCarousel>
+      </div>
     </div>
   );
 }

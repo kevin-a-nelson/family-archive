@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+.app {
+    min-height: 100vh;
+    max-width: 800px;
+    margin: 0px auto;
+    margin-top: 10vh;
+    position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.controller-carousel-container {
+    max-width: 1000px;
+    margin: 0px auto;
+    position: absolute;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.simple-carousel-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0px auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.simple-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+    margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.buttons-top {
+    margin: 0px auto;
+    width: 300px;
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.buttons-bottom {
+    position: fixed;
+    width: 230px;
+    margin: 5% auto;
+    display: flex;
+    justify-content: space-between;
+    visibility: hidden;
+    /* Will not center vertically and won't work in IE6/7. */
+    left: 0;
+    right: 0;
+    bottom: 10px;
+}
+
+.counter {
+    font-size: 25px;
+    margin: 0px;
+    padding: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+    .buttons-top {
+        visibility: hidden;
+    }
+
+    .buttons-bottom {
+        visibility: visible;
+    }
 }
