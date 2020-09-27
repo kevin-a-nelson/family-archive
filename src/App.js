@@ -27,6 +27,14 @@ function App() {
 
   return (
     <div className="app">
+      <div>
+        <span className="tap-instructions">
+          <br></br>
+          Tap the right side of the image to see the next image
+          <br></br>
+          Tap the left side of the image image to see the prev image
+        </span>
+      </div>
         <SimpleCarousel
           images={images}
         >

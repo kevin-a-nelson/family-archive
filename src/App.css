@@ -1,6 +1,17 @@
 
+.app {
+    text-align: center;
+}
+
+.tap-instructions {
+    display: block;
+    margin: 0 10px;
+    line-height: 25px;
+    font-size: 10px;
+}
+
 #simple-image {
-    max-width: 1000px;
+    max-width: 800px;
     width: 100%;
     position: absolute;
     top: 50%;
