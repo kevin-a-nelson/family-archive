@@ -6,6 +6,7 @@ import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function SimpleCarousel(props) {
     const [index, setIndex] = useState(0)
+    const [cords, setCords] = useState(null)
 
     const nextImage = () => {
         index + 1 < props.images.length ?
@@ -19,6 +20,16 @@ export default function SimpleCarousel(props) {
             setIndex(index - 1)
             :
             setIndex(props.images.length - 1)
+    }
+
+    const changeImage = (e) => {
+        const screenWidth = window.innerWidth
+        const clickXCord = e.clientX
+
+        clickXCord < screenWidth / 2 ?
+            prevImage()
+            :
+            nextImage()
     }
 
     if(props.images.length <= 0) {
@@ -43,8 +54,8 @@ export default function SimpleCarousel(props) {
 
             {/* Image */}
             <img
-                onClick={() => nextImage()}
-                className="simple-image"
+                onClick={changeImage}
+                id="simple-image"
                 src={props.images[index].fields.Attachments[0].url}
                 alt="family"
             ></img>
