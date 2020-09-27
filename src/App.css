@@ -1,83 +1,9 @@
-/* 
-    - When a user clicked the arrow, it would sometimes highlight the image / counter
-    - Disable highlighting on page 
-*/
-* {
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: -moz-none;
-    -o-user-select: none;
-    user-select: none;
-}
-
-.app {
-    min-height: 100vh;
-    max-width: 800px;
-    margin: 0px auto;
-    position: relative;
-}
-
-.simple-carousel-container {
-    max-width: 800px;
-    width: 100%;
-    margin: 0px auto;
-}
 
 #simple-image {
+    max-width: 1000px;
     width: 100%;
-    height: auto;
-    margin: 0px auto;
-    margin-bottom: 20px;
-}
-
-.buttons-desktop {
-    width: 300px;
-    align-items: center;
-    justify-content: space-between;
-    display: flex;
-    margin: 10px auto;
-}
-
-.buttons-mobile {
-    text-align: center;
-    position: fixed;
-    width: 230px;
-    margin: 5px auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    visibility: hidden;
-    /* Will not center vertically and won't work in IE6/7. */
-    left: 0;
-    right: 0;
-    bottom: 5px;
-}
-
-.arrow {
-    font-size: 60px;
-    color: #4c6ef5
-}
-
-.counter {
-    vertical-align: middle;
-    font-size: 25px;
-}
-
-@media only screen and (max-width: 550px) {
-    .buttons-desktop {
-        visibility: hidden;
-    }
-
-    .buttons-mobile {
-        visibility: visible;
-    }
-
-    /* Center Image Vetically */
-    .simple-image {
-        margin-bottom: 0px;
-        position: fixed;
-        top: 40%;
-        transform: translateY(-40%);
-    }
-
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

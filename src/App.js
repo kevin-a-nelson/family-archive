@@ -27,12 +27,10 @@ function App() {
 
   return (
     <div className="app">
-      <div className="simple-carousel-container">
         <SimpleCarousel
           images={images}
         >
         </SimpleCarousel>
-      </div>
     </div>
   );
 }

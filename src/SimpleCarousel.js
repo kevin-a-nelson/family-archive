@@ -38,41 +38,12 @@ export default function SimpleCarousel(props) {
 
     return (
         <div>
-
-            {/* Buttons at the top for desktop */}
-            <div className="buttons-desktop">
-                <div className="arrow" onClick={() => prevImage()}>
-                    <FontAwesomeIcon icon={faArrowCircleLeft} />
-                </div>
-                <p className="counter">
-                    {index + 1}&nbsp;/&nbsp;{props.images.length}
-                </p>
-                <div className="arrow" onClick={() => nextImage()}>
-                    <FontAwesomeIcon icon={faArrowCircleRight} />
-                </div>
-            </div>
-
-            {/* Image */}
             <img
                 onClick={changeImage}
                 id="simple-image"
                 src={props.images[index].fields.Attachments[0].url}
                 alt="family"
             ></img>
-
-            {/* Buttons at the bottom for mobile */}
-            <div className="buttons-mobile">
-                <div className="arrow">
-                    <FontAwesomeIcon onClick={() => prevImage()} icon={faArrowCircleLeft} />
-                </div>
-                <p className="counter">
-                    {index + 1}&nbsp;/&nbsp;{props.images.length}
-                </p>
-                <div className="arrow">
-                    <FontAwesomeIcon onClick={() => nextImage()} icon={faArrowCircleRight} />
-                </div>
-            </div>
-
         </div>
     );
 }
