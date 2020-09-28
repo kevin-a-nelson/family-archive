@@ -38,12 +38,21 @@ export default function SimpleCarousel(props) {
 
     return (
         <div>
+            <div className="counter">
+                <span> {index} / {props.images.length} </span>
+            </div>
             <img
                 onClick={changeImage}
                 id="simple-image"
-                src={props.images[index].fields.Attachments[0].url}
+                src={props.images[index]}
                 alt="family"
             ></img>
+            <div className="tap-left">
+                Tap Left of Image
+            </div>
+            <div className="tap-right">
+                Tap Right of Image
+            </div>
         </div>
     );
 }

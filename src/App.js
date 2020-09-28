@@ -10,6 +10,7 @@ function App() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
+    // listReactFiles("./images").then((files) => console.log(files));
     axios.get(
         secret.url, {
           headers: {
@@ -19,8 +20,10 @@ function App() {
     ).then(
       response => {
         // filter out records that don't have attachments
-        const images = response.data.records.filter((record) => record.fields.Attachments)
-        setImages(images)
+        // const recodesWithImages = response.data.records.filter((record) => record.fields.Attachments)
+        const records = response.data.records
+        const imageUrls = records[0].fields.Attachments.map(attachment => { return attachment.url })
+        setImages(imageUrls)
       }
     );
   }, []);
@@ -28,12 +31,11 @@ function App() {
   return (
     <div className="app">
       <div>
-        <span className="tap-instructions">
-          <br></br>
+        {/* <span className="tap-instructions">
           Tap the right side of the image to see the next image
           <br></br>
           Tap the left side of the image image to see the prev image
-        </span>
+        </span> */}
       </div>
         <SimpleCarousel
           images={images}

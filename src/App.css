@@ -3,11 +3,20 @@
     text-align: center;
 }
 
-.tap-instructions {
-    display: block;
-    margin: 0 10px;
-    line-height: 25px;
-    font-size: 10px;
+.tap-left {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    background: white;
+    padding: 5px;
+}
+
+.tap-right {
+    padding: 5px;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    background: white;
 }
 
 #simple-image {
@@ -17,4 +26,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+
+.counter {
+    background: white;
+    position: fixed;
+    padding: 5px;
+    top: 0px;
+    left: 0px;
 }
